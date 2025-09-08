@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balai Penyuluhan Pertanian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom animations for smooth transitions */
+        .slide-in {
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        .slide-out {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-blue-50 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-gradient-to-r from-green-600 to-green-700 text-white shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold">Balai Penyuluhan Pertanian</h1>
+                        <p class="text-xs text-green-100">Kabupaten Kebumen</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" id="nav-beranda" class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-all duration-200 transform hover:scale-105">Beranda</a>
+                        <a href="#" id="nav-profil" class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-all duration-200 transform hover:scale-105">Profil</a>
+                        <a href="#" id="nav-bpp" class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-all duration-200 transform hover:scale-105">BPP</a>
+                        <a href="#" id="nav-kontak" class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-all duration-200 transform hover:scale-105">Kontak</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-green-700 focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path class="inline" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-green-700">
+                <a href="#" id="mobile-nav-beranda" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-800 transition-colors">Beranda</a>
+                <a href="#" id="mobile-nav-profil" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-800 transition-colors">Profil</a>
+                <a href="#" id="mobile-nav-bpp" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-800 transition-colors">BPP</a>
+                <a href="#" id="mobile-nav-kontak" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-800 transition-colors">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Added hero section for better visual appeal -->
+    <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">Sistem Informasi Penyuluhan Pertanian</h2>
+                <p class="text-green-100 text-sm md:text-base">Kabupaten Kebumen - Mendukung Pertanian Modern dan Berkelanjutan</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+        <div class="flex flex-col lg:flex-row gap-6 md:gap-8">
+            <!-- Main Content Area (2/3 width) -->
+            <main class="lg:w-2/3">
+                <!-- Main Table View -->
+                <div id="main-table-view" class="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                        <div>
+                            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-1">Daftar Kegiatan Penyuluhan</h2>
+                            <p class="text-sm text-gray-600">Pantau semua kegiatan penyuluhan di Kabupaten Kebumen</p>
+                        </div>
+                        <div id="loading-indicator" class="hidden">
+                            <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-green-600"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Improved table with better mobile responsiveness -->
+                    <div class="overflow-x-auto rounded-lg border border-gray-200">
+                        <table id="activities-table" class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gradient-to-r from-green-50 to-blue-50">
+                                <tr>
+                                    <th class="px-3 md:px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">No</th>
+                                    <!-- Added Waktu column to main table -->
+                                    <th class="px-3 md:px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Waktu</th>
+                                    <th class="px-3 md:px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Kegiatan</th>
+                                    <th class="px-3 md:px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">BPP</th>
+                                    <th class="px-3 md:px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="activities-tbody" class="bg-white divide-y divide-gray-200">
+                                <!-- Dynamic content will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- BPP Detail View -->
+                <div id="bpp-detail-view" class="bg-white rounded-lg shadow-md p-6 hidden">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 id="bpp-detail-title" class="text-2xl font-bold text-gray-800"></h2>
+                        <button id="back-button" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-colors">
+                            ← Kembali
+                        </button>
+                    </div>
+                    
+                    <!-- Removed email field and restructured BPP information -->
+                    <!-- BPP Information Card -->
+                    <div class="bg-green-50 rounded-lg p-4 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h3 class="font-semibold text-gray-700">Kontak:</h3>
+                                <p id="bpp-contact" class="text-gray-600"></p>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-700">Alamat:</h3>
+                                <p id="bpp-address" class="text-gray-600"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Added separate table for coordinator and extension officers -->
+                    <!-- Staff Information Table -->
+                    <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Tim Penyuluh</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jabatan</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bpp-staff-tbody" class="bg-white divide-y divide-gray-200">
+                                    <!-- Staff information will be inserted here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Filtered Activities Table -->
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Kegiatan di BPP Ini</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <!-- Removed No and PIC columns from BPP detail table -->
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kegiatan</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lokasi</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bpp-activities-tbody" class="bg-white divide-y divide-gray-200">
+                                <!-- Filtered activities will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+        <!-- Profile Section (DOM manipulation instead of modal) -->
+        <div id="profile-section" class="bg-white rounded-lg shadow-md p-6 hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Profil Penyuluhan Kabupaten Kebumen</h2>
+                <button id="close-profile-section" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-colors">
+                    ← Kembali
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Visi</h3>
+                    <p class="text-gray-700 leading-relaxed">Mewujudkan pertanian Kabupaten Kebumen yang modern, berkelanjutan, dan berdaya saing tinggi melalui penyuluhan yang efektif dan inovatif.</p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Misi</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            Memberikan penyuluhan pertanian yang berkualitas dan tepat sasaran
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            Mengembangkan kapasitas petani melalui pelatihan dan pendampingan
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            Mendorong adopsi teknologi pertanian modern dan ramah lingkungan
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">•</span>
+                            Memfasilitasi akses petani terhadap informasi pasar dan permodalan
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Alamat</h4>
+                        <p class="text-gray-600">Jl. Pemuda No. 1, Kebumen, Jawa Tengah 54311</p>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Kontak</h4>
+                        <p class="text-gray-600">Telp: (0287) 381234<br>Email: penyuluhan@kebumenkab.go.id</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </main>
+
+            <!-- Right Aside (1/3 width) -->
+            <aside class="lg:w-1/3 space-y-6">
+                <!-- Enhanced info section with better mobile layout -->
+                <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        Info Penting
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400 p-3 rounded-r-lg">
+                            <p class="text-sm text-yellow-800 font-medium">Pendaftaran program bantuan bibit unggul dibuka hingga akhir bulan ini.</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-3 rounded-r-lg">
+                            <p class="text-sm text-blue-800 font-medium">Pelatihan teknologi pertanian modern akan diadakan minggu depan.</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-400 p-3 rounded-r-lg">
+                            <p class="text-sm text-green-800 font-medium">Konsultasi gratis tersedia setiap hari Senin-Jumat pukul 08:00-16:00.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic contact section that will be populated from BPP data -->
+                <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                        <div class="w-8 h-8 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                        </div>
+                        Kontak Kami
+                    </h3>
+                    <div id="contact-info" class="space-y-3">
+                        <!-- Updated contact info to match profile penyuluhan data -->
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">Alamat</p>
+                                <p class="text-sm text-gray-600">Jl. Pemuda No. 1, Kebumen, Jawa Tengah 54311</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">Telepon</p>
+                                <p class="text-sm text-gray-600">(0287) 381234</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">Email</p>
+                                <p class="text-sm text-gray-600">penyuluhan@kebumenkab.go.id</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Removed "Lihat Semua Kontak BPP" button -->
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- BPP Sidebar -->
+    <div id="bpp-sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div id="bpp-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-lg font-semibold text-gray-800">Daftar BPP</h3>
+                <button id="close-sidebar" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="mb-4">
+                <input type="text" id="bpp-search" placeholder="Cari BPP..." 
+                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+            </div>
+            
+            <!-- BPP List -->
+            <div id="bpp-list" class="space-y-2 max-h-96 overflow-y-auto">
+                <!-- BPP items will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Added Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Kontak Balai Penyuluhan Pertanian</h2>
+                    <button id="close-contact-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div id="all-contacts-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Dynamic contact list will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <p class="text-sm">&copy; 2024 Balai Penyuluhan Pertanian. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Application State
+        let allActivities = [];
+        let allBPPs = [];
+        let currentView = 'main-table';
+
+        // Configuration - Replace these URLs with your actual Google Sheets CSV URLs
+        const config = {
+            // Replace with your Google Sheets CSV URL for activities
+            // Format: https://docs.google.com/spreadsheets/d/SHEET_ID/export?format=csv&gid=SHEET_GID
+            kegiatanSheetUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSCp2aEBEd_OSwvLp3XoujhDyg9xyQ9QhtC6PaZpGB4nKhLlfKHjPM5BhwFljQFrP5rnkM1wP4vyP9/pub?gid=1564808318&single=true&output=csv',
+            
+            // Replace with your Google Sheets CSV URL for BPP master list
+            bppSheetUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRSCp2aEBEd_OSwvLp3XoujhDyg9xyQ9QhtC6PaZpGB4nKhLlfKHjPM5BhwFljQFrP5rnkM1wP4vyP9/pub?gid=1987681421&single=true&output=csv'
+        };
+
+        const columnMappings = {
+            activities: {
+                'No': ['No', 'Number', 'Nomor', 'ID', 'no', 'nomor', '#'],
+                'Waktu': ['Waktu', 'Time', 'Tanggal', 'Date', 'waktu', 'time', 'tanggal', 'date', 'Tgl', 'Hari', 'Hari/Tanggal'],
+                'Kegiatan': ['Kegiatan', 'Activity', 'Nama Kegiatan', 'kegiatan', 'activity', 'Nama', 'Judul', 'Jenis Kegiatan'],
+                'Lokasi': ['Lokasi', 'Location', 'Tempat', 'lokasi', 'location', 'Desa', 'Wilayah', 'Alamat', 'Venue'], 
+                'BPP': ['BPP', 'Nama BPP', 'bpp', 'Unit BPP', 'Balai', 'Unit'],
+                'Status': ['Status', 'Kondisi', 'status', 'kondisi', 'State', 'Progress', 'Keterangan']
+            },
+            bpp: {
+                'id': ['ID', 'No', 'Number', 'Nomor', 'id', 'no', '#'],
+                'name': ['Name', 'Nama', 'Nama BPP', 'BPP', 'name', 'nama', 'Balai', 'Unit BPP'],
+                'coordinator': ['Coordinator', 'Koordinator', 'Head', 'Kepala', 'coordinator', 'koordinator', 'Kepala BPP'],
+                'contact': ['Contact', 'Kontak', 'Phone', 'Telepon', 'contact', 'kontak', 'HP', 'No HP', 'No. HP', 'Handphone'],
+                'address': ['Address', 'Alamat', 'Lokasi', 'address', 'alamat', 'lokasi', 'Tempat'],
+                'penyuluh': ['Penyuluh', 'Nama Penyuluh', 'penyuluh', 'nama penyuluh', 'Extension Officer', 'Staff', 'Tim Penyuluh'],
+                'email': ['Email', 'Mail', 'Surel', 'email', 'mail', 'surel', 'E-mail'],
+                'popt' : ['POPT']
+            }
+        };
+
+        function debugLog(message, data = null) {
+            console.log(`[DEBUG] ${message}`, data);
+        }
+
+        function showDebugInfo(message, type = 'info') {
+            const debugDiv = document.getElementById('debug-info');
+            if (debugDiv) {
+                const timestamp = new Date().toLocaleTimeString();
+                const colorClass = type === 'error' ? 'text-red-600' : type === 'success' ? 'text-green-600' : 'text-blue-600';
+                debugDiv.innerHTML += `<div class="${colorClass} text-xs">[${timestamp}] ${message}</div>`;
+                debugDiv.scrollTop = debugDiv.scrollHeight;
+            }
+        }
+
+        function mapColumns(data, type) {
+            if (!data || data.length === 0) return [];
+            
+            const mappings = {
+                activities: {
+                    waktu: ['waktu', 'tanggal', 'date', 'time'],
+                    kegiatan: ['kegiatan', 'activity', 'nama kegiatan', 'nama_kegiatan'],
+                    lokasi: ['lokasi', 'location', 'tempat', 'alamat'],
+                    bpp: ['bpp', 'nama bpp', 'nama_bpp'],
+                    status: ['status', 'kondisi', 'state']
+                },
+                bpp: {
+                    name: ['nama', 'name', 'nama bpp', 'nama_bpp'],
+                    alamat: ['alamat', 'address', 'lokasi'],
+                    koordinator: ['koordinator', 'kepala', 'coordinator', 'head'],
+                    popt: ['POPT', 'pegawai popt', 'staff popt', 'popt staff'],
+                    penyuluh: ['penyuluh', 'nama penyuluh', 'extension officer', 'staff', 'tim penyuluh'],
+                    kontak: ['kontak', 'contact', 'telepon', 'phone', 'hp'],
+                    email: ['email', 'e-mail', 'mail'],
+                    wilayah: ['wilayah', 'area', 'desa', 'villages', 'wilayah kerja']
+                }
+            };
+
+            const mapping = mappings[type];
+            if (!mapping) return data;
+
+            return data.map(item => {
+                const mapped = {};
+                const availableKeys = Object.keys(item);
+                
+                for (const [targetKey, possibleNames] of Object.entries(mapping)) {
+                    let foundKey = availableKeys.find(key => 
+                        possibleNames.some(possible => 
+                            key.toLowerCase().includes(possible.toLowerCase()) ||
+                            possible.toLowerCase().includes(key.toLowerCase())
+                        )
+                    );
+                    
+                    mapped[targetKey] = foundKey ? item[foundKey] : 'N/A';
+                }
+                
+                return mapped;
+            });
+        }
+
+        function calculateSimilarity(str1, str2) {
+            const longer = str1.length > str2.length ? str1 : str2;
+            const shorter = str1.length > str2.length ? str2 : str1;
+            
+            if (longer.length === 0) return 1.0;
+            
+            const editDistance = levenshteinDistance(longer, shorter);
+            return (longer.length - editDistance) / longer.length;
+        }
+        
+        function levenshteinDistance(str1, str2) {
+            const matrix = [];
+            
+            for (let i = 0; i <= str2.length; i++) {
+                matrix[i] = [i];
+            }
+            
+            for (let j = 0; j <= str1.length; j++) {
+                matrix[0][j] = j;
+            }
+            
+            for (let i = 1; i <= str2.length; i++) {
+                for (let j = 1; j <= str1.length; j++) {
+                    if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(
+                            matrix[i - 1][j - 1] + 1,
+                            matrix[i][j - 1] + 1,
+                            matrix[i - 1][j] + 1
+                        );
+                    }
+                }
+            }
+            
+            return matrix[str2.length][str1.length];
+        }
+
+        function parseCSV(csvText) {
+            try {
+                debugLog('Raw CSV text received:', csvText.substring(0, 200) + '...');
+                
+                const lines = csvText.trim().split('\n');
+                debugLog('Number of lines in CSV:', lines.length);
+                
+                if (lines.length < 2) {
+                    throw new Error('CSV harus memiliki minimal 2 baris (header + data)');
+                }
+                
+                // Better CSV parsing to handle quoted values
+                function parseCSVLine(line) {
+                    const result = [];
+                    let current = '';
+                    let inQuotes = false;
+                    
+                    for (let i = 0; i < line.length; i++) {
+                        const char = line[i];
+                        
+                        if (char === '"') {
+                            inQuotes = !inQuotes;
+                        } else if (char === ',' && !inQuotes) {
+                            result.push(current.trim());
+                            current = '';
+                        } else {
+                            current += char;
+                        }
+                    }
+                    result.push(current.trim());
+                    return result;
+                }
+                
+                const headers = parseCSVLine(lines[0]).map(header => header.replace(/"/g, '').trim());
+                debugLog('CSV Headers found:', headers);
+                showDebugInfo(`📊 Header ditemukan: ${headers.join(', ')}`, 'info');
+                
+                const data = [];
+                for (let i = 1; i < lines.length; i++) {
+                    if (lines[i].trim() === '') continue; // Skip empty lines
+                    
+                    const values = parseCSVLine(lines[i]).map(value => value.replace(/"/g, '').trim());
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header] = values[index] || '';
+                    });
+                    
+                    // Only add rows that have at least one non-empty value
+                    if (Object.values(row).some(value => value !== '')) {
+                        data.push(row);
+                    }
+                }
+                
+                debugLog('Parsed CSV data:', data);
+                showDebugInfo(`✅ Berhasil parsing ${data.length} baris data`, 'success');
+                return data;
+                
+            } catch (error) {
+                debugLog('CSV parsing error:', error);
+                showDebugInfo(`❌ Error parsing CSV: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        function showLoading() {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.classList.remove('hidden');
+            }
+        }
+
+        function hideLoading() {
+            const loadingElement = document.getElementById('loading');
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+        }
+
+        function showError(message) {
+            console.error('[v0] Error:', message);
+            showDebugInfo(`❌ ${message}`, 'error');
+        }
+
+        function mapColumns(data, type) {
+            if (!data || data.length === 0) return [];
+            
+            const mappings = {
+                activities: {
+                    waktu: ['waktu', 'tanggal', 'date', 'time'],
+                    kegiatan: ['kegiatan', 'activity', 'nama kegiatan', 'nama_kegiatan'],
+                    lokasi: ['lokasi', 'location', 'tempat', 'alamat'],
+                    bpp: ['bpp', 'nama bpp', 'nama_bpp'],
+                    status: ['status', 'kondisi', 'state']
+                },
+                bpp: {
+                    name: ['nama', 'name', 'nama bpp', 'nama_bpp'],
+                    alamat: ['alamat', 'address', 'lokasi'],
+                    koordinator: ['koordinator', 'kepala', 'coordinator', 'head'],
+                    penyuluh: ['penyuluh', 'nama penyuluh', 'extension officer', 'staff', 'tim penyuluh'],
+                    kontak: ['kontak', 'contact', 'telepon', 'phone', 'hp'],
+                    email: ['email', 'e-mail', 'mail'],
+                    wilayah: ['wilayah', 'area', 'desa', 'villages', 'wilayah kerja'],
+                    popt: ['POPT']
+                }
+            };
+
+            const mapping = mappings[type];
+            if (!mapping) return data;
+
+            return data.map(item => {
+                const mapped = {};
+                const availableKeys = Object.keys(item);
+                
+                for (const [targetKey, possibleNames] of Object.entries(mapping)) {
+                    let foundKey = availableKeys.find(key => 
+                        possibleNames.some(possible => 
+                            key.toLowerCase().includes(possible.toLowerCase()) ||
+                            possible.toLowerCase().includes(key.toLowerCase())
+                        )
+                    );
+                    
+                    mapped[targetKey] = foundKey ? item[foundKey] : 'N/A';
+                }
+                
+                return mapped;
+            });
+        }
+
+        function renderActivitiesTable(activities) {
+            const tableBody = document.getElementById('activities-table-body');
+            if (!tableBody) return;
+
+            if (!activities || activities.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="4" class="text-center py-8 text-gray-500">Tidak ada data kegiatan</td></tr>';
+                return;
+            }
+
+            tableBody.innerHTML = activities.map((activity, index) => `
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 text-sm text-gray-900">${index + 1}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">${activity.waktu || 'N/A'}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">${activity.kegiatan || 'N/A'}</td>
+                    <td class="px-6 py-4">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(activity.status)}">
+                            ${activity.status || 'N/A'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function getStatusColor(status) {
+            if (!status) return 'bg-gray-100 text-gray-800';
+            const statusLower = status.toLowerCase();
+            if (statusLower.includes('selesai') || statusLower.includes('completed')) {
+                return 'bg-green-100 text-green-800';
+            } else if (statusLower.includes('berlangsung') || statusLower.includes('ongoing')) {
+                return 'bg-blue-100 text-blue-800';
+            } else if (statusLower.includes('direncanakan') || statusLower.includes('planned')) {
+                return 'bg-yellow-100 text-yellow-800';
+            }
+            return 'bg-gray-100 text-gray-800';
+        }
+
+        function renderBPPList(bpps) {
+            const bppList = document.getElementById('bpp-list');
+            if (!bppList) return;
+
+            if (!bpps || bpps.length === 0) {
+                bppList.innerHTML = '<p class="text-gray-500 text-center py-4">Tidak ada data BPP</p>';
+                return;
+            }
+
+            bppList.innerHTML = bpps.map(bpp => `
+                <div class="bpp-item p-4 border-b border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors" 
+                     onclick="showBPPDetail('${bpp.name}')">
+                    <h3 class="font-semibold text-gray-900">${bpp.name || 'N/A'}</h3>
+                    <p class="text-sm text-gray-600">${bpp.koordinator || 'N/A'}</p>
+                    <p class="text-xs text-gray-500">${bpp.alamat || 'N/A'}</p>
+                </div>
+            `).join('');
+        }
+
+        function showBPPDetail(bppName) {
+            console.log("[v0] Showing BPP detail for:", bppName);
+            const bpp = allBPPs.find(b => b.name === bppName);
+            if (!bpp) {
+                console.log("[v0] BPP not found:", bppName);
+                return;
+            }
+
+            console.log("[v0] Found BPP:", bpp);
+
+            const titleElement = document.getElementById('bpp-detail-title');
+            const coordinatorElement = document.getElementById('bpp-coordinator');
+            const addressElement = document.getElementById('bpp-address');
+            const contactElement = document.getElementById('bpp-contact');
+
+            if (titleElement) titleElement.textContent = bpp.name || 'N/A';
+            if (coordinatorElement) coordinatorElement.textContent = bpp.koordinator || 'N/A';
+            if (addressElement) addressElement.textContent = bpp.alamat || 'N/A';
+            if (contactElement) contactElement.textContent = bpp.kontak || 'N/A';
+
+            const teamTableBody = document.getElementById('team-table-body');
+            if (teamTableBody) {
+                let teamRows = '';
+                
+                // Add coordinator
+                if (bpp.koordinator) {
+                    teamRows += `
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 font-medium text-gray-900">Koordinator</td>
+                            <td class="py-2 px-4 text-gray-700">${bpp.koordinator}</td>
+                        </tr>
+                    `;
+                }
+                
+                if (bpp.popt && bpp.popt !== 'N/A') {
+                    const poptList = bpp.popt.split(',').map(p => p.trim()).filter(p => p);
+                    poptList.forEach(popt => {
+                        teamRows += `
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4 font-medium text-gray-900">POPT</td>
+                                <td class="py-2 px-4 text-gray-700">${popt}</td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                // Add extension officers if available
+                if (bpp.penyuluh) {
+                    const penyuluhList = bpp.penyuluh.split(',').map(p => p.trim()).filter(p => p);
+                    penyuluhList.forEach(penyuluh => {
+                        teamRows += `
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4 font-medium text-gray-900">Penyuluh</td>
+                                <td class="py-2 px-4 text-gray-700">${penyuluh}</td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                teamTableBody.innerHTML = teamRows || `
+                    <tr>
+                        <td colspan="2" class="py-4 px-4 text-center text-gray-500">Data tim tidak tersedia</td>
+                    </tr>
+                `;
+            }
+
+            // Filter activities for this BPP
+            const bppActivities = allActivities.filter(activity => 
+                activity.bpp && activity.bpp.toLowerCase().includes(bppName.toLowerCase())
+            );
+
+            console.log("[v0] Filtered activities:", bppActivities.length);
+
+            // Render BPP activities
+            renderBPPActivities(bppActivities);
+
+            document.getElementById('main-table-view').classList.add('hidden');
+            document.getElementById('bpp-detail-view').classList.remove('hidden');
+            document.getElementById('profile-section').classList.add('hidden');
+            currentView = 'bpp-detail';
+            closeBPPSidebar();
+
+            console.log("[v0] Switched to BPP detail view");
+        }
+
+
+        async function fetchBPPs() {
+            try {
+                showDebugInfo('🔄 Memuat data BPP...', 'info');
+                const response = await fetch(config.bppSheetUrl + '&t=' + Date.now());
+                const csvText = await response.text();
+                const rawData = parseCSV(csvText);
+                allBPPs = mapColumns(rawData, 'bpp');
+                showDebugInfo(`✅ Berhasil memuat ${allBPPs.length} BPP`, 'success');
+                renderBPPList(allBPPs);
+                
+            } catch (error) {
+                showError('Gagal memuat data BPP: ' + error.message);
+                allBPPs = [];
+            }
+        }
+
+        async function fetchActivities() {
+            try {
+                showDebugInfo('🔄 Memuat data kegiatan...', 'info');
+                const response = await fetch(config.kegiatanSheetUrl + '&t=' + Date.now());
+                const csvText = await response.text();
+                const rawData = parseCSV(csvText);
+                allActivities = mapColumns(rawData, 'activities');
+                showDebugInfo(`✅ Berhasil memuat ${allActivities.length} kegiatan`, 'success');
+                renderActivitiesTable(allActivities);
+                
+            } catch (error) {
+                showError('Gagal memuat data kegiatan: ' + error.message);
+                allActivities = [];
+            }
+        }
+
+        function renderActivitiesTable(activities) {
+            const tableBody = document.getElementById('activities-tbody');
+            if (!tableBody) return;
+
+            if (!activities || activities.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5" class="text-center py-8 text-gray-500">Tidak ada data kegiatan</td></tr>';
+                return;
+            }
+
+            tableBody.innerHTML = activities.map((activity, index) => `
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-3 md:px-6 py-4 text-sm text-gray-900">${index + 1}</td>
+                    <td class="px-3 md:px-6 py-4 text-sm text-gray-900">${activity.waktu || 'N/A'}</td>
+                    <td class="px-3 md:px-6 py-4 text-sm text-gray-900">${activity.kegiatan || 'N/A'}</td>
+                    <td class="px-3 md:px-6 py-4 text-sm text-gray-900">${activity.bpp || 'N/A'}</td>
+                    <td class="px-3 md:px-6 py-4">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(activity.status)}">
+                            ${activity.status || 'N/A'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function renderBPPActivities(activities) {
+            const tableBody = document.getElementById('bpp-activities-tbody');
+            if (!tableBody) return;
+
+            if (!activities || activities.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="4" class="text-center py-8 text-gray-500">Tidak ada kegiatan untuk BPP ini</td></tr>';
+                return;
+            }
+
+            tableBody.innerHTML = activities.map(activity => `
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 text-sm text-gray-900">${activity.waktu || 'N/A'}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">${activity.kegiatan || 'N/A'}</td>
+                    <td class="px-6 py-4 text-sm text-gray-900">${activity.lokasi || 'N/A'}</td>
+                    <td class="px-6 py-4">
+                        <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(activity.status)}">
+                            ${activity.status || 'N/A'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function showBPPDetail(bppName) {
+            console.log("[v0] Showing BPP detail for:", bppName);
+            const bpp = allBPPs.find(b => b.name === bppName);
+            if (!bpp) {
+                console.log("[v0] BPP not found:", bppName);
+                return;
+            }
+
+            console.log("[v0] Found BPP:", bpp);
+
+            const titleElement = document.getElementById('bpp-detail-title');
+            const addressElement = document.getElementById('bpp-address');
+            const contactElement = document.getElementById('bpp-contact');
+
+            if (titleElement) titleElement.textContent = bpp.name || 'N/A';
+            if (addressElement) addressElement.textContent = bpp.alamat || 'N/A';
+            if (contactElement) contactElement.textContent = bpp.kontak || 'N/A';
+
+            const staffTableBody = document.getElementById('bpp-staff-tbody');
+            if (staffTableBody) {
+                let teamRows = '';
+                
+                // Add coordinator
+                if (bpp.koordinator && bpp.koordinator !== 'N/A') {
+                    teamRows += `
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 font-medium text-gray-900">Koordinator</td>
+                            <td class="py-2 px-4 text-gray-700">${bpp.koordinator}</td>
+                        </tr>
+                    `;
+                }
+                
+                // Add POPT staff after coordinator, before penyuluh
+                if (bpp.popt && bpp.popt !== 'N/A') {
+                    const poptList = bpp.popt.split(',').map(p => p.trim()).filter(p => p);
+                    poptList.forEach(popt => {
+                        teamRows += `
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4 font-medium text-gray-900">POPT</td>
+                                <td class="py-2 px-4 text-gray-700">${popt}</td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                // Add extension officers if available
+                if (bpp.penyuluh && bpp.penyuluh !== 'N/A') {
+                    const penyuluhList = bpp.penyuluh.split(',').map(p => p.trim()).filter(p => p);
+                    penyuluhList.forEach(penyuluh => {
+                        teamRows += `
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2 px-4 font-medium text-gray-900">Penyuluh</td>
+                                <td class="py-2 px-4 text-gray-700">${penyuluh}</td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                staffTableBody.innerHTML = teamRows || `
+                    <tr>
+                        <td colspan="2" class="py-4 px-4 text-center text-gray-500">Data tim tidak tersedia</td>
+                    </tr>
+                `;
+            }
+
+            // Filter activities for this BPP
+            const bppActivities = allActivities.filter(activity => 
+                activity.bpp && activity.bpp.toLowerCase().includes(bppName.toLowerCase())
+            );
+
+            console.log("[v0] Filtered activities:", bppActivities.length);
+
+            // Render BPP activities
+            renderBPPActivities(bppActivities);
+
+            document.getElementById('main-table-view').classList.add('hidden');
+            document.getElementById('bpp-detail-view').classList.remove('hidden');
+            document.getElementById('profile-section').classList.add('hidden');
+            currentView = 'bpp-detail';
+            closeBPPSidebar();
+
+            console.log("[v0] Switched to BPP detail view");
+        }
+
+        function showMainView() {
+            document.getElementById('main-table-view').classList.remove('hidden');
+            document.getElementById('bpp-detail-view').classList.add('hidden');
+            document.getElementById('profile-section').classList.add('hidden');
+            currentView = 'main-table';
+        }
+
+        function showProfileSection() {
+            document.getElementById('main-table-view').classList.add('hidden');
+            document.getElementById('bpp-detail-view').classList.add('hidden');
+            document.getElementById('profile-section').classList.remove('hidden');
+            currentView = 'profile';
+        }
+
+        function hideProfileSection() {
+            showMainView();
+        }
+
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact-info');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                // Add highlight effect
+                contactSection.classList.add('bg-yellow-100');
+                setTimeout(() => {
+                    contactSection.classList.remove('bg-yellow-100');
+                }, 2000);
+            }
+        }
+
+        function openBPPSidebar() {
+            document.getElementById('bpp-sidebar-overlay').classList.remove('hidden');
+            document.getElementById('bpp-sidebar').classList.remove('translate-x-full');
+        }
+
+        function closeBPPSidebar() {
+            document.getElementById('bpp-sidebar-overlay').classList.add('hidden');
+            document.getElementById('bpp-sidebar').classList.add('translate-x-full');
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function setupBPPSearch() {
+            const searchInput = document.getElementById('bpp-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const filteredBPPs = allBPPs.filter(bpp => 
+                        bpp.name.toLowerCase().includes(searchTerm) ||
+                        (bpp.koordinator && bpp.koordinator.toLowerCase().includes(searchTerm)) ||
+                        (bpp.alamat && bpp.alamat.toLowerCase().includes(searchTerm))
+                    );
+                    renderBPPList(filteredBPPs);
+                });
+            }
+        }
+
+        function createDebugPanel() {
+            const debugPanel = document.createElement('div');
+            debugPanel.id = 'debug-panel';
+            debugPanel.className = 'fixed bottom-4 right-4 bg-white border border-gray-300 rounded-lg shadow-lg p-4 max-w-sm z-50';
+            debugPanel.innerHTML = `
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold text-sm">Debug Info</h4>
+                    <button onclick="toggleDebugPanel()" class="text-gray-400 hover:text-gray-600">×</button>
+                </div>
+                <div id="debug-info" class="text-xs max-h-32 overflow-y-auto bg-gray-50 p-2 rounded"></div>
+                <div class="mt-2 space-x-2">
+                    <button onclick="refreshData()" class="text-xs bg-blue-500 text-white px-2 py-1 rounded">Refresh</button>
+                    <button onclick="clearDebug()" class="text-xs bg-gray-500 text-white px-2 py-1 rounded">Clear</button>
+                </div>
+            `;
+            document.body.appendChild(debugPanel);
+        }
+
+        function toggleDebugPanel() {
+            const panel = document.getElementById('debug-panel');
+            if (panel) {
+                panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+
+        function clearDebug() {
+            const debugInfo = document.getElementById('debug-info');
+            if (debugInfo) {
+                debugInfo.innerHTML = '';
+            }
+        }
+
+        function refreshData() {
+            showDebugInfo('🔄 Memuat ulang data...', 'info');
+            initializeData();
+        }
+
+        async function initializeData() {
+            try {
+                showDebugInfo('🚀 Memulai inisialisasi aplikasi...', 'info');
+                await Promise.all([fetchActivities(), fetchBPPs()]);
+                showDebugInfo('✅ Inisialisasi selesai', 'success');
+            } catch (error) {
+                showError('Gagal menginisialisasi aplikasi: ' + error.message);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("[v0] DOM loaded, initializing...");
+            
+            // Create debug panel
+            createDebugPanel();
+            
+            // Initialize data
+            initializeData();
+            
+            // Setup search
+            setupBPPSearch();
+            
+            // Navigation event listeners
+            document.getElementById('nav-beranda')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                showMainView();
+            });
+            
+            document.getElementById('nav-profil')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                showProfileSection();
+            });
+            
+            document.getElementById('nav-bpp')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                openBPPSidebar();
+            });
+            
+            document.getElementById('nav-kontak')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollToContact();
+            });
+            
+            // Mobile navigation
+            document.getElementById('mobile-menu-button')?.addEventListener('click', toggleMobileMenu);
+            
+            document.getElementById('mobile-nav-beranda')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                showMainView();
+                toggleMobileMenu();
+            });
+            
+            document.getElementById('mobile-nav-profil')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                showProfileSection();
+                toggleMobileMenu();
+            });
+            
+            document.getElementById('mobile-nav-bpp')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                openBPPSidebar();
+                toggleMobileMenu();
+            });
+            
+            document.getElementById('mobile-nav-kontak')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                scrollToContact();
+                toggleMobileMenu();
+            });
+            
+            // BPP sidebar controls
+            document.getElementById('close-sidebar')?.addEventListener('click', closeBPPSidebar);
+            document.getElementById('bpp-sidebar-overlay')?.addEventListener('click', closeBPPSidebar);
+            
+            // Back button
+            document.getElementById('back-button')?.addEventListener('click', showMainView);
+            
+            // Profile section controls
+            document.getElementById('close-profile-section')?.addEventListener('click', hideProfileSection);
+            
+            console.log("[v0] Event listeners initialized");
+        });
+    </script>
+</body>
+</html>
