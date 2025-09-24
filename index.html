@@ -335,19 +335,34 @@
                     <!-- Removed "Lihat Semua Kontak BPP" button -->
                 </div>
                 
-                <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                        <div class="w-8 h-8 bg-gradient-to-r from-white-400 to-white-500 rounded-full flex items-center justify-center mr-3">
-                            <svg role="img" aria-labelledby="ytTitle1" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-                              <title id="ytTitle1">YouTube</title>
-                              <rect x="2" y="5" width="20" height="14" rx="4" ry="4" fill="#FF0000"/>
-                              <polygon points="10,8 16,12 10,16" fill="#FFFFFF"/>
-                            </svg>
-                        </div>
-                        Vidio Youtube
-                    </h3>
-                    <iframe width="400" height="250" src="https://www.youtube.com/embed/Q-ZAsEC5Zs0?si=ePbpxrtzBumIo0zJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100">
+                <!-- Judul -->
+                <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                  <div class="w-8 h-8 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center mr-3">
+                    <svg role="img" aria-labelledby="ytTitle1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+                      <title id="ytTitle1">YouTube</title>
+                      <rect x="2" y="5" width="20" height="14" rx="4" ry="4" fill="#FF0000"/>
+                      <polygon points="10,8 16,12 10,16" fill="#FFFFFF"/>
+                    </svg>
+                  </div>
+                  Video YouTube
+                </h3>
+              
+                <!-- Embed YouTube responsif -->
+                <div class="aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/Q-ZAsEC5Zs0?rel=0&modestbranding=1"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
                 </div>
+              </div>
+
             </aside>
         </div>
     </div>
